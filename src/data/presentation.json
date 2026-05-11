@@ -27,33 +27,37 @@
       {
         "id": "execution_roadmap",
         "heading": "Execution: Product & Engineering Sync",
-        "narrative": "The 2026-2027 roadmap aligns product monetization goals with critical engineering stepping stones to ensure architectural viability.",
+        "narrative": "The 2026-2027 roadmap aligns product monetization scenarios with critical engineering stepping stones to ensure architectural viability at petabyte scale.",
         "timeline": [
           {
             "quarter": "Q2 2026",
             "theme": "Securing the Foundation",
+            "scenarios": ["Aligned Tenant Isolation with Compute (Sub-tenant resale)", "Veeam Direct Backup Target penetration"],
             "product_deliverables": ["S3 Multi-Tenancy (Keystone-aligned)", "S3 Cost API MVP"],
-            "engineering_enablers": ["S3 Bucket Scalability (Large Object Counts)", "EC File Random Read Optimization"],
+            "engineering_enablers": ["S3 Bucket Scalability for high object counts", "Enhanced recovery from dirty chunks for EC LSM"],
             "business_impact": "Unlocks the ability for MSPs to accurately meter, isolate, and charge for subsequent high-margin tiers."
           },
           {
             "quarter": "Q3 2026",
             "theme": "The AI Expansion",
+            "scenarios": ["High-performance S3 backend for vLLM Distributed Training", "NVIDIA GPUDirect Storage compliance"],
             "product_deliverables": ["GPU Direct Integration (S3 RDMA)", "cuObject Paths (v8.1)"],
-            "engineering_enablers": ["Active-Active NFSv3 (Windows/Large Data)", "S3 Log Anonymization for Compliance"],
+            "engineering_enablers": ["High-performance active-active NFSv3", "S3 request history (metadata only)"],
             "business_impact": "Penetrates the $975M SAM by targeting ML pipelines, charging a 1.5x–2.0x premium for the GPU-optimized tier.",
             "image_file": "/images/gpu-direct-concept.png"
           },
           {
             "quarter": "Q4 2026",
             "theme": "Cloud-Native & Archival Counter-Offensive",
+            "scenarios": ["Multi-tier flexible storage for BaaS", "K8s compliant CSI for PaaS architectures"],
             "product_deliverables": ["Multi-Tier Archival Storage API", "Kubernetes CSI Driver MVP"],
-            "engineering_enablers": ["S3 Distributed Tracing", "New Backend for S3 (Per-Stripe Layout)"],
+            "engineering_enablers": ["S3 Distributed Tracing", "New storage backend for S3 services (per-stripe layout)"],
             "business_impact": "Directly counters Wasabi's price pressure and targets the bare-metal Kubernetes market to replace Ceph/Portworx."
           },
           {
             "quarter": "Q1-Q2 2027",
             "theme": "Edge Performance & Maturation",
+            "scenarios": ["Decoupled edge caching to eliminate retrieval bottlenecks", "Enterprise K8s backup/restore pipelines"],
             "product_deliverables": ["Active-Active Cache Proxy MVP", "K8s CSI integration with Kasten/Velero"],
             "engineering_enablers": ["Multi-tier Archive Data Migration PoC", "AI Workload Scalability Testing"],
             "business_impact": "Eliminates egress bottlenecks and solidifies enterprise Kubernetes backup adoption."
@@ -63,8 +67,29 @@
       {
         "id": "innovation",
         "heading": "The GTM Shift: Benchmark-as-a-Service (BaaS)",
-        "narrative": "We must change our sales motion. Instead of competing on static datasheets against hyperscaler marketing budgets, we propose launching Benchmark-as-a-Service. Using our continuous internal benchmarking dataset, an Agentic AI will allow customers to input their exact workload requirements and instantly receive a validated reference architecture. We do not guess architecture or performance; we demonstrate it.",
+        "narrative": "We must change our sales motion. Instead of competing on static datasheets against hyperscaler marketing budgets, we propose launching Benchmark-as-a-Service. Using our continuous internal benchmarking dataset, an Agentic AI will allow customers to input their exact workload requirements and instantly receive a validated reference architecture.",
         "image_file": "/images/baas-mockup.png"
+      },
+      {
+        "id": "experimental",
+        "heading": "Experimental R&D: Native Data Versioning",
+        "narrative": "To capture the next generation of AI and data-engineering workloads, we are evaluating merging our object storage backend with Git-like principles, similar to the LakeFS architecture. As massive unstructured datasets become the foundation for Innovative Use Cases (like autonomous robotic training and LLM fine-tuning), reproducibility is mandatory.",
+        "points": [
+          "Zero-Copy Branching: Data engineers can branch petabytes of training data instantaneously without duplicating storage consumption.",
+          "Atomic Commits & Rollbacks: Complete protection against data corruption during distributed model training.",
+          "CI/CD for Data: Enables automated validation of datasets before they are merged into production inferencing models."
+        ]
+      },
+      {
+        "id": "appendix",
+        "heading": "Appendix & Proof Points",
+        "narrative": "Industry validation and strategic research underpinning the 2026-2027 Virtuozzo Storage roadmap.",
+        "points": [
+          "Gartner (2024): The market for AI-ready data infrastructure is projected to more than double by 2027, validating our $6.5B GPU/AI SAM and the prioritization of S3 RDMA integrations.",
+          "CNCF Cloud Native Survey: Persistent storage remains a top barrier for stateful Kubernetes workloads, highlighting the urgency for our operator-friendly bare-metal CSI driver to displace complex Ceph deployments.",
+          "Data Versioning in MLOps: Organizations adopting architectures like LakeFS report up to 80% reduction in storage costs for duplicate ML training environments through zero-copy branching.",
+          "Pricing Pressures: Wasabi and Backblaze continue to capture the MSP tier through egress-free modeling. Our Keystone-aligned Multi-Tenancy and Cost API are strict prerequisites to enabling our ACPs to counter this with predictable, multi-tier economics."
+        ]
       }
     ]
   }

@@ -107,6 +107,17 @@ export default function Home() {
                         <h4 className="text-xl font-bold text-slate-100">{item.quarter} <span className="text-slate-500 font-normal ml-2">| {item.theme}</span></h4>
                         <div className="mt-3 space-y-2">
                           <p className="text-sm"><span className="text-blue-400 font-semibold uppercase tracking-wider text-xs mr-2">Product:</span> <span className="text-slate-300">{item.product_deliverables.join(' • ')}</span></p>
+                         <p className="text-sm"><span className="text-emerald-400 font-semibold uppercase tracking-wider text-xs mr-2">Use Case:</span> <span className="text-slate-300">{item.scenarios.join(' • ')}</span></p>
+                         {section.points && (
+  <ul className="space-y-4">
+    {section.points.map((point: string, i: number) => (
+      <li key={i} className="flex items-start text-slate-300 text-lg leading-relaxed">
+        <span className="text-blue-500 mr-3 mt-1">⯈</span>
+        {point}
+      </li>
+    ))}
+  </ul>
+)}
                           <p className="text-sm"><span className="text-purple-400 font-semibold uppercase tracking-wider text-xs mr-2">Eng:</span> <span className="text-slate-300">{item.engineering_enablers.join(' • ')}</span></p>
                         </div>
                         <p className="text-sm text-slate-400 mt-4 bg-slate-950/50 p-3 rounded-lg border border-slate-800">{item.business_impact}</p>
