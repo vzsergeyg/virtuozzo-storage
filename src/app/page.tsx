@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import presentationData from '@/data/presentation.json';
+import presentationData from '../data/presentation.json';
 import { ChevronDown } from 'lucide-react';
 
 export default function Home() {
