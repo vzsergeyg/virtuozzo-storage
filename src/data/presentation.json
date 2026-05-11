@@ -71,26 +71,43 @@
         "image_file": "/images/baas-mockup.png"
       },
       {
-        "id": "experimental",
-        "heading": "Experimental R&D: Native Data Versioning",
-        "narrative": "To capture the next generation of AI and data-engineering workloads, we are evaluating merging our object storage backend with Git-like principles, similar to the LakeFS architecture. As massive unstructured datasets become the foundation for Innovative Use Cases (like autonomous robotic training and LLM fine-tuning), reproducibility is mandatory.",
-        "points": [
-          "Zero-Copy Branching: Data engineers can branch petabytes of training data instantaneously without duplicating storage consumption.",
-          "Atomic Commits & Rollbacks: Complete protection against data corruption during distributed model training.",
-          "CI/CD for Data: Enables automated validation of datasets before they are merged into production inferencing models."
-        ]
-      },
-      {
-        "id": "appendix",
-        "heading": "Appendix & Proof Points",
-        "narrative": "Industry validation and strategic research underpinning the 2026-2027 Virtuozzo Storage roadmap.",
-        "points": [
-          "Gartner (2024): The market for AI-ready data infrastructure is projected to more than double by 2027, validating our $6.5B GPU/AI SAM and the prioritization of S3 RDMA integrations.",
-          "CNCF Cloud Native Survey: Persistent storage remains a top barrier for stateful Kubernetes workloads, highlighting the urgency for our operator-friendly bare-metal CSI driver to displace complex Ceph deployments.",
-          "Data Versioning in MLOps: Organizations adopting architectures like LakeFS report up to 80% reduction in storage costs for duplicate ML training environments through zero-copy branching.",
-          "Pricing Pressures: Wasabi and Backblaze continue to capture the MSP tier through egress-free modeling. Our Keystone-aligned Multi-Tenancy and Cost API are strict prerequisites to enabling our ACPs to counter this with predictable, multi-tier economics."
-        ]
-      }
+  "id": "appendix",
+  "heading": "Appendix: Architecture, Objections & Proofs",
+  "narrative": "Detailed technical defenses, R&D insights, and market validation backing the 2026-2027 strategic roadmap.",
+  "experimental_insights": [
+    "Concept: Data Versioning (LakeFS-style) natively integrated at the Virtuozzo S3 backend.",
+    "Mechanism: Zero-copy branching allows petabyte-scale AI training datasets to be versioned instantaneously using metadata pointers rather than physical duplication.",
+    "Strategic Value: Enables 'CI/CD for Data'. Data engineers can rollback corrupted AI training states and run parallel experiments without exploding MSP storage costs."
+  ],
+  "qa_pairs": [
+    {
+      "q": "How do we prevent the BaaS Agentic AI from hallucinating unsupported architectures?",
+      "a": "Strict RAG (Retrieval-Augmented Generation) grounding. The agent is hard-coded to only query our CI/CD pipeline's validated benchmark datasets. It has zero free-form architectural speculation capabilities."
+    },
+    {
+      "q": "Does GPUDirect force our MSPs to upgrade their entire network fabric?",
+      "a": "No. The GPU-optimized tier is explicitly targeted at dedicated AI compute clusters utilizing RoCEv2 or InfiniBand, which are already standard in those environments. Standard tenants remain on the traditional TCP stack."
+    },
+    {
+      "q": "Why invest in a bare-metal CSI driver when Ceph is open-source?",
+      "a": "Ceph's operational complexity destroys MSP margins by requiring dedicated storage engineers. Our CSI driver is operator-friendly, automating NVMe caching and garbage collection to drastically reduce Day-2 OPEX."
+    }
+  ],
+  "links": [
+    {
+      "title": "Gartner: AI Infrastructure Market to Double by 2027", 
+      "url": "https://www.gartner.com/en/newsroom/press-releases/"
+    },
+    {
+      "title": "CNCF Annual Survey: Persistent Storage in Kubernetes", 
+      "url": "https://www.cncf.io/reports/cncf-annual-survey-2023/"
+    },
+    {
+      "title": "LakeFS / Data Versioning in MLOps Architectures", 
+      "url": "https://lakefs.io/blog/data-versioning-mlops/"
+    }
+  ]
+}
     ]
   }
 }

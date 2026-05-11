@@ -108,7 +108,59 @@ export default function Home() {
                     ))}
                   </ul>
                 )}
+{/* Render Experimental Insights */}
+                {section.experimental_insights && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-blue-400 mb-4 border-b border-slate-800 pb-2">R&D Insight: Native Data Versioning</h3>
+                    <ul className="space-y-3">
+                      {section.experimental_insights.map((insight: string, i: number) => (
+                        <li key={i} className="flex items-start text-slate-300 text-sm leading-relaxed bg-slate-950/50 p-3 rounded border border-slate-800/50">
+                          <span className="text-purple-500 mr-3 mt-0.5">◈</span>
+                          {insight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
+                {/* Render QA Pairs (Objection Handling) */}
+                {section.qa_pairs && (
+                  <div className="mb-8 space-y-4">
+                    <h3 className="text-xl font-bold text-emerald-400 mb-4 border-b border-slate-800 pb-2">Executive QA & Objection Handling</h3>
+                    {section.qa_pairs.map((qa: any, i: number) => (
+                      <div key={i} className="bg-slate-950/80 p-4 rounded-lg border border-slate-700/50">
+                        <p className="font-semibold text-slate-100 mb-2 flex items-start">
+                          <span className="text-emerald-500 mr-2 border border-emerald-500/30 rounded px-1 text-xs mt-0.5">Q</span> 
+                          {qa.q}
+                        </p>
+                        <p className="text-sm text-slate-400 flex items-start">
+                          <span className="text-blue-500 mr-2 border border-blue-500/30 rounded px-1 text-xs mt-0.5">A</span> 
+                          {qa.a}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Render Proof Point Links */}
+                {section.links && (
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-300 mb-4 border-b border-slate-800 pb-2">Reference Links</h3>
+                    <div className="flex flex-col space-y-2">
+                      {section.links.map((link: any, i: number) => (
+                        <a 
+                          key={i} 
+                          href={link.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-400 hover:text-blue-300 hover:underline flex items-center transition-colors"
+                        >
+                          <span className="mr-2">↗</span> {link.title}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {/* Render Timeline if it exists */}
                 {section.timeline && (
                   <div className="space-y-8">
