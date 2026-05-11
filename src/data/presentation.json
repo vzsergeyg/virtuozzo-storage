@@ -1,0 +1,52 @@
+{
+  "presentation": {
+    "title": "Virtuozzo Storage: The Path to $130M",
+    "meta": {
+      "target_year": 2030,
+      "strategic_focus": ["Core Defense", "Market Capture"]
+    },
+    "sections": [
+      {
+        "id": "mandate",
+        "heading": "The Mandate: Path to $130M",
+        "narrative": "Achieving our revenue target requires a bifurcated strategy: defending our core ACP/MSP base against hyperscaler pricing pressure, while capturing net-new revenue in cloud-native and AI infrastructure.",
+        "visual_type": "dual_axis_chart"
+      },
+      {
+        "id": "market_math",
+        "heading": "Market Calibration (2026-2027)",
+        "narrative": "Our Serviceable Addressable Market (SAM) is strictly defined as 15% of the Global TAM, explicitly excluding captive hyperscaler workloads.",
+        "data": [
+          {"category": "GPU/AI Storage", "tam_b": 6.5, "sam_m": 975, "arr_uplift_m": [12, 15]},
+          {"category": "Object Storage (S3)", "tam_b": 11.0, "sam_m": 1650, "arr_uplift_m": [4.5, 6]},
+          {"category": "Kubernetes CSI", "tam_b": 3.0, "sam_m": 450, "arr_uplift_m": [6, 8]},
+          {"category": "Multi-Tier Archival", "tam_b": 4.0, "sam_m": 600, "arr_uplift_m": [4, 5]}
+        ]
+      },
+      {
+        "id": "execution_roadmap",
+        "heading": "Product & Engineering Synchronization",
+        "timeline": [
+          {
+            "quarter": "Q2 2026",
+            "theme": "Securing the Foundation",
+            "product": ["S3 Multi-Tenancy", "S3 Cost API"],
+            "engineering": ["S3 Bucket Scalability", "EC File Read Optimization"]
+          },
+          {
+            "quarter": "Q3 2026",
+            "theme": "The AI Expansion",
+            "product": ["GPU Direct Integration (S3 RDMA)", "cuObject Paths"],
+            "engineering": ["Active-Active NFSv3", "S3 Log Anonymization"]
+          }
+        ]
+      },
+      {
+        "id": "innovation",
+        "heading": "Benchmark-as-a-Service (BaaS)",
+        "narrative": "Transitioning from static datasheets to interactive solution engineering. We do not guess performance; we demonstrate it.",
+        "visual_type": "ai_agent_mockup"
+      }
+    ]
+  }
+}
