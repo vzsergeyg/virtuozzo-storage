@@ -10,21 +10,23 @@ export default function BlogPost() {
       
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 z-0 opacity-40">
+        <div className="absolute inset-0 z-0">
           <img 
             src={`${basePath}/images/savanna-berry.png`} 
             alt="The Cognitive Berry" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/60 to-slate-950"></div>
+          {/* Adjusted gradient: less aggressive, allowing the logo and berry to pop */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center mt-20">
+        {/* Added a blurred, dark backdrop specific to the text for readability over the bright image */}
+        <div className="relative z-10 max-w-4xl mx-auto px-8 py-10 text-center mt-20 bg-slate-950/40 backdrop-blur-md rounded-3xl border border-slate-700/50 shadow-2xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold tracking-tight text-slate-100 mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold tracking-tight text-slate-100 mb-6 leading-tight drop-shadow-lg"
           >
             The Cognitive Trap and the Data Graveyard
           </motion.h1>
@@ -32,7 +34,7 @@ export default function BlogPost() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-purple-400 font-light"
+            className="text-xl md:text-2xl text-purple-300 font-medium drop-shadow-md"
           >
             How Human Psychology is Forcing a Rewrite of AI Infrastructure
           </motion.p>
@@ -76,7 +78,7 @@ export default function BlogPost() {
         {/* Video Break 1 */}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="my-16 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
           <video 
-            src={`${basePath}/videos/data-tsunami.mp4`} 
+            src={`${basePath}/images/data-tsunami.mp4`} 
             autoPlay 
             loop 
             muted 
@@ -119,7 +121,7 @@ export default function BlogPost() {
         {/* Video Break 2 */}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="my-16 rounded-2xl overflow-hidden border border-slate-800 shadow-2xl border-purple-500/30">
           <video 
-            src={`${basePath}/videos/data-graveyard.mp4`} 
+            src={`${basePath}/images/data-graveyard.mp4`} 
             autoPlay 
             loop 
             muted 
